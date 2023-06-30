@@ -32,7 +32,7 @@ profit_value = float(increase) * int(shares)
 
 # print("Current/Predicted Total:", float(profit_value), "kr")
 
-time.sleep(1)
+time.sleep(0.5)
 
 profit = (float(profit_value - (float(total_gav))))
 
