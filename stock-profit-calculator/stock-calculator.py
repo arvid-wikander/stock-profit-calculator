@@ -2,7 +2,9 @@ import time
 import os
 
 print("Welcome to stock calculator xd")
-time.sleep(0.5)
+time.sleep(1)
+
+os.system('cls')
 
 gav = ""
 while gav < "0":
