@@ -44,4 +44,4 @@ time.sleep(0.5)
 
 print("\n\nTotal Profit:", (profit), "kr")
 
-input('Press ENTER to exit')
+input('\n\nPress ENTER to exit')
