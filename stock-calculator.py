@@ -1,45 +1,47 @@
 import time
 import os
+import click
 
-print("Welcome to stock calculator xd")
-time.sleep(1)
+def main():
+    os.system('cls')
 
-os.system('cls')
+    currency=input("In what currency do you want to calculate?: ")
+    
+    gav = ""
+    while gav < "0":
+        gav = input("Enter Purchase Price (per share): ")
+    time.sleep(0.5)
 
-gav = ""
-while gav < "0":
-    gav = input("Enter Purchase Price (per share): ")
-time.sleep(0.5)
+    shares = ""
+    while shares < "0":
+        shares = input("Enter the amount of shares: ")
 
-shares = ""
-while shares < "0":
-    shares = input("Enter the amount of shares: ")
+    time.sleep(0.5)
 
-time.sleep(0.5)
+    total_gav = float(gav) * int(shares)
 
-total_gav = float(gav) * int(shares)
+    increase = ""
+    while increase < "0":
+        increase = input("Current/Predicted future price of stock: ")
 
-increase = ""
-while increase < "0":
-    increase = input("Current/Predicted future price of stock: ")
+    profit_value = float(increase) * int(shares)
+    time.sleep(0.1)
+    profit = (float(profit_value - (float(total_gav))))
 
-time.sleep(1)
+    load = "Calculating Profit..."
 
+    for i in range(21):
+        print(load[i], sep='', end= '', flush=True); time.sleep(0.05)
+    time.sleep(0.1)
 
-profit_value = float(increase) * int(shares)
+    print("\n\nTotal Profit:", (profit), (currency))
+    confirm=click.confirm("\nRestart?", default=False)
+    if confirm==True:
+        return
+    else:
+        quit()
 
-# print("Current/Predicted Total:", float(profit_value), "kr")
+while True:
+    main()
 
-time.sleep(0.5)
-
-profit = (float(profit_value - (float(total_gav))))
-
-load = "Calculating Profit..."
-
-for i in range(21):
-    print(load[i], sep='', end= '', flush=True); time.sleep(0.1)
-time.sleep(0.5)
-
-print("\n\nTotal Profit:", (profit), "kr")
-
-input('\n\nPress ENTER to exit')
+exit()
